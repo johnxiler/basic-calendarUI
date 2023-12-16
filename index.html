@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script type="text/javascript" src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+    integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS"
+    crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="./static/css/style.css">
+  <link rel="stylesheet" href="./static/css/modal.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+    integrity="sha512-KyZXEAg3QhqLMpG8r+Knujsl5+z0D5L78sJ1NaTKAf4QjNMtgAZtZQZU2eHo4TUK1yq6i0ePTJwal+zxlfQrEFg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
+
+  <title>Rapid Calendar UI</title>
+</head>
+
+<body>
+  <div class="overlayer">
+    <!-- <script>
+    // Fetch and insert content from another HTML file
+    fetch('./components/navBar.html')
+      .then(response => response.text())
+      .then(html => {
+        document.getElementById('header').innerHTML = html;
+      })
+      .catch(error => console.error('Error fetching content:', error));
+    // $(document).ready(function () {
+    //   $("#header").load("./components/navBar.html");
+    // });
+  </script>
+  <div id="header">
+  </div> -->
+    <!-- <br />
+  <br />
+  <br /> -->
+  </div>
+  <main id="main">
+    <div class="container">
+      <!-- Column 1 -->
+      <div class="column column-1">
+        <button class="navbar-toggler" type="button" data-mdb-toggle="collapse" data-mdb-target="#navbarExample01"
+          aria-controls="navbarExample01" aria-expanded="false" aria-label="Toggle navigation">
+          <i><iconify-icon icon="iconamoon:menu-burger-horizontal-bold"></iconify-icon></i>
+        </button>
+        <!-- Add your other sidebar content here -->
+      </div>
+      <!-- Column 2 -->
+      <div class="column parentcol-2">
+        <h3>Office Schedule</h3>
+        <div class="column-2-top">
+          <div id="month-year-dropdown">
+            <!-- JavaScript will dynamically generate the month and year dropdown here -->
+          </div>
+        </div>
+        <div class="column-2">
+          <div id="schedule-display">
+            <h3>Events:</h3>
+
+          </div>
+          <div class="yellowbtn" id="add-btn">
+            <!-- <img src="#" alt="plus-sign"> -->
+            <i><iconify-icon icon="iconamoon:sign-plus-fill"></iconify-icon></i>
+            <p>Add</p>
+          </div>
+          <div class="yellowbtn" id="edit-btn">
+            <!-- <img src="#" alt="edit-sign"> -->
+            <i><iconify-icon
+                icon="streamline:interface-edit-flip-up-design-up-flip-reflect-vertical"></iconify-icon></i>
+            <p>Edit</p>
+          </div>
+        </div>
+      </div>
+      <!-- Column 3 -->
+      <div class="column column-3">
+        <!-- <div class="weektitle"> -->
+        <!-- Your calendar content goes here -->
+        <!-- Days of the Week -->
+        <!-- <p>Sunday</p>
+          <p>Monday</p>
+          <p>Tuesday</p>
+          <p>Wednesday</p>
+          <p>Thursday</p>
+          <p>Friday</p>
+          <p>Saturday</p>
+        </div> -->
+        <div class="calendar" id="calendar-container">
+          <div class="week-container">
+            <!-- JavaScript will dynamically generate day cards here -->
+            <div class="day-card" id="day-{dayNumber}">
+
+            </div>
+          </div>
+        </div>
+        <!-- <div class="calendar"> -->
+        <!-- Repeat the following block for each day of the month -->
+        <!-- <div class="day-card"> -->
+        <!-- <div class="day-header">Monday</div> -->
+        <!-- <div class="day-number">1</div> -->
+        <!-- <ul class="day-events">
+              <li class="event-item">Event 1</li>
+              <li class="event-item">Event 2</li>
+            </ul> -->
+        <!-- </div> -->
+        <!-- End of day block -->
+
+        <!-- Daycard Details Modal -->
+        <div class="modal-box">
+          <div class="modal fade" id="daycard-details" data-backdrop="static" tabindex="-1" role="dialog"
+            aria-labelledby="daycard-details-label">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <button type="button" class="close-btn" onclick="modal.closeDaycardDetails()" data-dismiss="modal"
+                  aria-label="Close">
+                  <span aria-hidden="true">×</span>
+                </button>
+                <div class="modal-body" id="daycard-details-content">
+                  <!-- Content for daycard-details modal will be dynamically added here -->
+                </div>
+                <button type="button" class="delete-btn" onclick="modal.closeDaycardDetails()" data-dismiss="modal"
+                  aria-label="Close">
+                  <span aria-hidden="true">delete</span>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Modal for Add and Edit -->
+        <div class="modal-box">
+          <div class="modal fade" id="overlay" data-backdrop="static" tabindex="-1" role="dialog"
+            aria-labelledby="myModalLabel">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <button type="button" class="close-btn" onclick="modal.close()" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">×</span>
+                </button>
+                <div class="modal-body">
+                  <!-- <div class="modal-icon"><i class="fas fa-thumbs-up"></i></div> -->
+                  <h2 class="sched">Add New Schedule</h2>
+                  <form id="schedule-form">
+                    <label
+                      style="width: 100%; height: 100%; color: #393737; font-size: 22px; font-family: Quicksand; font-weight: 700; word-wrap: break-word"
+                      for="title">Title:</label>
+                    <input
+                      style="width: 100%; height: 100%; background: white; box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25); border-radius: 20px"
+                      type="text" id="title" name="title" required>
+
+                    <label
+                      style="width: 100%; height: 100%; color: #393737; font-size: 22px; font-family: Quicksand; font-weight: 700; word-wrap: break-word"
+                      for="start-date">Start Date:</label>
+                    <input
+                      style="width: 50%; height: 100%; background: white; box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25); border-radius: 20px"
+                      type="date" id="start-date" name="start-date" required>
+
+                    <label
+                      style="width: 100%; height: 100%; color: #393737; font-size: 22px; font-family: Quicksand; font-weight: 700; word-wrap: break-word"
+                      for="end-date">End Date</label>
+                    <input
+                      style="width: 50%; height: 100%; background: white; box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25); border-radius: 20px"
+                      type="date" id="end-date" name="end-date" required>
+
+                    <label for="notes">Notes:</label>
+                    <textarea
+                      style="width: 100%; height: 100%; background: white; box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25); border-radius: 20px"
+                      id="notes" name="notes" rows="4" cols="50"></textarea>
+
+                    <button
+                      style="width: 50%; height: 100%; background: #FFCF28; box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25); border-radius: 10px"
+                      type="button" onclick="modal.submit()">Submit</button>
+                    <button
+                      style="width: 50%; height: 100%; background: #D0C9C9; box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25); border-radius: 10px"
+                      type="button" onclick="modal.close()">Cancel</button>
+                  </form>
+                  <!-- <h3 class="title">success</h3>
+                  <p class="description">Your request was submitted successfully!</p>
+                  <button class="btn">done</button> -->
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+  </main>
+
+  <!-- <footer id="footer">
+    <script>
+      // Fetch and insert content from another HTML file
+      fetch('./components/footer.html')
+        .then(response => response.text())
+        .then(html => {
+          document.getElementById('footer').innerHTML = html;
+        })
+        .catch(error => console.error('Error fetching content:', error));
+    </script>
+  </footer> -->
+  <!-- <script>
+  
+  </script> -->
+  <script src="./static/js/script.js"></script>
+</body>
+
+</html>

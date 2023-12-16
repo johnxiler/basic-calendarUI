@@ -1,0 +1,957 @@
+  /* Add a responsive design for medium screens */
+  @media only screen and (max-width: 1024px) {
+    .container {
+      flex-direction: column;
+    }
+
+    .column-1,
+    .parentcol-2,
+    .column-3 {
+      width: 100%;
+      /* Make them full width */
+    }
+
+  }
+
+  /* Add a responsive design for small screens */
+  /* @media only screen and (max-width: 768px) { */
+  /* #main {
+    flex-direction: column;
+  }
+
+  .column-1,
+  .parentcol-2,
+  .column-3 {
+    width: 100%; */
+
+  /* Make them full width */
+  /* }
+.column-1{
+  margin-top: 10%;
+  margin-left: 10%;
+}
+  .column-2-top {
+    width: 90vw;
+    background-color: #000;
+  }
+
+  .column-2 {
+    width: 10vw;
+    margin-left: 10%;
+    z-index: 1;
+  }
+
+  .column-3 {
+    width: 90vw;
+    margin-left: 25%;
+    }
+
+  .day-card {
+    width: 17vw;
+  }
+
+  .yellowbtn {
+    margin-top: 78%;
+    padding: 50 auto;
+    z-index: 2;
+  }
+} */
+
+  /* Add a responsive design for extra small screens */
+  @media only screen and (max-width: 320px) {
+
+    .column-1,
+    .parentcol-2,
+    .column-3 {
+      width: 100%;
+      display: grid;
+      grid-template-columns: 1fr;
+      /* Create one rows */
+      grid-gap: 5px;
+      /* Adjust the gap as needed for spacing between stacked items */
+    }
+
+    /* Apply Grid Layout to the parent container */
+    .grid-container {
+      display: grid;
+      grid-template-columns: 1fr;
+      /* Create one column */
+      grid-gap: 5px;
+      /* Adjust the gap as needed for spacing between stacked items */
+    }
+
+    .column-1 {
+      margin-top: 10%;
+      width: 1vw;
+      height: 1vh;
+      /* background: #D6EDD4; */
+      box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+      /* border-radius: 10px; */
+      z-index: 2;
+      margin-left: 4%;
+    }
+
+    .column-1 button i {
+      color: #555;
+      background-color: #88EDC6;
+      width: 150vw;
+      height: 150vh;
+    }
+
+    .parentcol-2 {
+      /* display: flex; */
+      flex-direction: column;
+      height: 100%;
+      /* Set height to 100% */
+      margin-left: 10%;
+      margin-top: 1%;
+      z-index: 2;
+    }
+
+    .parentcol-2 h3 {
+      margin-top: 4%;
+    }
+
+    .column-2-top {
+      width: 18rem;
+      height: 47px;
+      background: #FFCF28;
+      box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+      border-radius: 10px;
+      margin-top: 1%;
+      display: flex;
+      align-items: center;
+    }
+
+    .column-2-top p {
+      margin: 0;
+      margin-top: 0.5%;
+    }
+
+    .column-2-top .upside-down {
+      width: 3vw;
+      height: 3vh;
+      transform: rotateY(-180deg);
+      margin-left: auto;
+    }
+
+    .column-2 {
+      width: 18rem;
+      height: 47vh;
+      background: #bff0ba;
+      box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+      border-radius: 10px;
+      margin-top: 0.5%;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-around;
+    }
+
+    .yellowbtn {
+      width: 80px;
+      height: 32px;
+      background: #FFCF28;
+      box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+      border-radius: 6px;
+      margin-top: 90%;
+      margin-right: 3%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      /* Add cursor pointer for better UX */
+    }
+
+    /* Adjust the icon size and margin if needed */
+    .yellowbtn i {
+      font-size: 16px;
+      margin-right: 5px;
+      /* Add margin between icon and text */
+    }
+
+    /* Center the text inside the yellowbtn */
+    .yellowbtn p {
+      margin: 0;
+      font-size: 14px;
+      /* Adjust the font size if needed */
+    }
+
+    .column-3 {
+      width: 90vw;
+      /* height: 150vh; */
+      background: #88EDC6;
+      box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+      border-radius: 10px;
+      margin-left: 1%;
+      /* display: grid; */
+      /* overflow-y: auto; */
+      /* Add this to enable vertical scrolling */
+      /* max-height: 80vh; */
+      /* Adjust the maximum height as needed */
+      /* flex-direction: row; */
+      height: 80%;
+      /* background-image: url(); */
+      /* Set height to 100% */
+      /* justify-content: space-between; */
+      margin-top: 1%;
+      z-index: 2;
+    }
+
+    .calendar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 5px;
+      justify-content: center;
+      /* Center the content horizontally */
+      align-items: flex-start;
+      /* Align items to the top */
+      padding: 5px;
+    }
+
+    /* .week-container {
+  display: grid;
+  flex-wrap: wrap;
+  width: 50vw;
+  gap: 5px;
+  justify-content: space-evenly;
+} */
+
+    .week-container {
+      flex-direction: column;
+      /* Stack day-cards in a column */
+      align-items: center;
+      /* Center the content horizontally */
+    }
+
+    .day-card {
+      /* width: 90%; /* Take full width on small screens */
+      /* margin-top: 0.5%; Adjust spacing between day-cards */
+      overflow: hidden;
+      height: 5%;
+      margin-left: 0;
+      padding-left: 0;
+      border: 1px solid #b1a4a4;
+      background-color: #f1f1f1;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      padding: 0.1%;
+      /* box-sizing: border-box; */
+      /* display: flex; */
+      flex-direction: column;
+      /* align-items: center; */
+      cursor: pointer;
+      /* flex-basis: calc(0.5% - 10px); */
+      width: calc(90% - 10px);
+      /* Take 33.33% width with some spacing for three columns */
+      margin-top: 5px;
+      /* Adjust spacing between day-cards */
+    }
+
+    .day-card.has-data {
+      background-color: #05e605;
+      /* Change this to your desired color */
+    }
+
+    .day-number {
+      font-size: 25px;
+      margin-bottom: 8px;
+      font-weight: bold;
+    }
+
+    .day-name {
+      font-size: x-small;
+      color: #555;
+      /* Adjust the color based on your design */
+    }
+
+  }
+
+  html,
+  body {
+    font-family: 'Quantico', sans-serif;
+    background: url("https://i.ibb.co/HtBWz42/background-serv.jpg") no-repeat center;
+    background-size: cover;
+    /* Adjust as needed */
+    background-position: center;
+    justify-content: center;
+    align-content: center;
+    /* Additional properties */
+    /* width: 100%;
+    height: 100%; */
+    /* background-image: url("./images/Staff/background.serv.jpg"); */
+  }
+
+  .overlayer {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: url("https://i.ibb.co/s1LWBbd/bordimg.png") no-repeat center;
+    background-size: cover;
+    opacity: 0.6;
+    z-index: 1;
+  }
+
+  /* body::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-image: url("./static/images/Staff/bordimg.png") no-repeat center;
+  background-size: cover;
+  background-position: center;
+  opacity: 0.45;
+  /* Adjust the transparency as needed */
+  /* Additional properties */
+  /* width: 100%;
+    height: 100%; */
+  /* } */
+  .container {
+    display: flex;
+  }
+
+  /* .column {
+        flex: 1;
+        margin: 10px;
+      } */
+
+  .column-1 {
+    margin-top: 10%;
+    width: 1vw;
+    height: 1vh;
+    /* background: #D6EDD4; */
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    /* border-radius: 10px; */
+    z-index: 2;
+    margin-left: 4%;
+  }
+
+  .column-1 button i {
+    color: #555;
+    background-color: #88EDC6;
+    width: 150vw;
+    height: 150vh;
+  }
+
+  .parentcol-2 {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    /* Set height to 100% */
+    margin-left: 3%;
+    margin-top: 9%;
+    z-index: 2;
+  }
+
+  .parentcol-2 h3 {
+    margin-top: 5%;
+  }
+
+  .column-2-top {
+    width: 249px;
+    height: 47px;
+    background: #FFCF28;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 10px;
+    margin-top: 2%;
+    display: flex;
+    align-items: center;
+  }
+
+  .column-2-top p {
+    margin: 0;
+    margin-top: 1%;
+  }
+
+  .column-2-top .upside-down {
+    width: 3vw;
+    height: 3vh;
+    transform: rotateY(-180deg);
+    margin-left: auto;
+  }
+
+  .column-2 {
+    width: 15.5vw;
+    height: 47vh;
+    background: #bff0ba;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 10px;
+    margin-top: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+  }
+
+  /* Style the dropdown container */
+  #month-year-dropdown {
+    display: flex;
+    align-items: center;
+  }
+
+  /* Style the dropdowns */
+  #month-dropdown,
+  #year-dropdown {
+    padding: 8px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+
+  /* Style the dropdown arrow */
+  #month-dropdown,
+  #year-dropdown {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background: url('https://api.iconify.design/gridicons/dropdown.svg') no-repeat right center;
+    padding-right: 20px;
+    /* Adjust the padding based on the arrow icon size */
+  }
+
+  /* Style the dropdown options */
+  #month-dropdown option,
+  #year-dropdown option {
+    font-size: 14px;
+  }
+
+  /* Add hover effect to the options */
+  #month-dropdown option:hover,
+  #year-dropdown option:hover {
+    background-color: #f5f5f5;
+  }
+
+  /* Add focus style for better accessibility */
+  #month-dropdown:focus,
+  #year-dropdown:focus {
+    outline: none;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+  }
+
+  .yellowbtn {
+    width: 80px;
+    height: 32px;
+    background: #FFCF28;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 6px;
+    margin-top: 125%;
+    margin-right: 5%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    /* Add cursor pointer for better UX */
+  }
+
+  /* Adjust the icon size and margin if needed */
+  .yellowbtn i {
+    font-size: 16px;
+    margin-right: 5px;
+    /* Add margin between icon and text */
+  }
+
+  /* Center the text inside the yellowbtn */
+  .yellowbtn p {
+    margin: 0;
+    font-size: 14px;
+    /* Adjust the font size if needed */
+  }
+
+  .column-3 {
+    width: 68vw;
+    /* height: 150vh; */
+    background: #88EDC6;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 10px;
+    margin-left: 2%;
+    display: flex;
+    overflow-y: auto;
+    /* Add this to enable vertical scrolling */
+    max-height: 80vh;
+    /* Adjust the maximum height as needed */
+    flex-direction: column;
+    height: 100%;
+    /* background-image: url(); */
+    /* Set height to 100% */
+    /* justify-content: space-between; */
+    margin-top: 12%;
+    z-index: 2;
+  }
+
+  .current-date {
+    /* background-color: #ffc107; */
+    /* Use your desired background color for the current date */
+    color: #f72703;
+    /* Use a contrasting text color for better visibility */
+    border-radius: 50%;
+    /* Optional: Make the current date circle-shaped */
+  }
+
+  .day-card:hover {
+    background-color: #0b6164;
+    /* Change the background color on hover */
+    cursor: pointer;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+    /* Add a subtle box shadow on hover */
+    transition: background-color 0.3s, box-shadow 0.3s;
+    /* Add transition effect */
+  }
+
+  #schedule-display {
+    margin-top: 10px;
+  }
+
+  #add-btn {
+    cursor: pointer;
+  }
+
+  #edit-btn {
+    cursor: pointer;
+  }
+
+  #delete-btn {
+    cursor: pointer;
+  }
+
+  #cancel-btn {
+    cursor: pointer;
+  }
+
+  /* .weektitle {
+  display: flex;
+  justify-content: space-evenly;
+  font-weight: bold;
+  margin-top: 10px;
+} */
+
+  .calendar {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: space-evenly;
+    padding: 10px;
+  }
+
+  .week-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: space-evenly;
+  }
+
+  .day-card {
+    margin-top: 25%;
+    border: 1px solid #b1a4a4;
+    width: 5vw;
+    background-color: #f1f1f1;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin: 10px;
+    padding: 10px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+    flex-basis: calc(14.28% - 10px);
+    /* Adjust the flex basis for responsiveness */
+    margin: 5px;
+  }
+
+  .day-card.has-data {
+    background-color: #05e605;
+    /* Change this to your desired color */
+  }
+
+  .day-number {
+    font-size: 24px;
+    margin-bottom: 8px;
+    font-weight: bold;
+  }
+
+  .day-name {
+    font-size: 12px;
+    color: #555;
+    /* Adjust the color based on your design */
+  }
+
+
+  html,
+  body {
+    font-family: 'Quantico', sans-serif;
+    background: url("https://i.ibb.co/HtBWz42/background-serv.jpg") no-repeat center;
+    background-size: cover;
+    /* Adjust as needed */
+    background-position: center;
+    justify-content: center;
+    align-content: center;
+    /* Additional properties */
+    /* width: 100%;
+    height: 100%; */
+    /* background-image: url("./images/Staff/background.serv.jpg"); */
+  }
+
+  .overlayer {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: url("https://i.ibb.co/s1LWBbd/bordimg.png") no-repeat center;
+    background-size: cover;
+    opacity: 0.6;
+    z-index: 1;
+  }
+
+  /* body::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-image: url("./static/images/Staff/bordimg.png") no-repeat center;
+  background-size: cover;
+  background-position: center;
+  opacity: 0.45;
+  /* Adjust the transparency as needed */
+  /* Additional properties */
+  /* width: 100%;
+    height: 100%; */
+  /* } */
+  .container {
+    display: flex;
+  }
+
+  /* .column {
+        flex: 1;
+        margin: 10px;
+      } */
+
+  .column-1 {
+    margin-top: 10%;
+    width: 1vw;
+    height: 1vh;
+    /* background: #D6EDD4; */
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    /* border-radius: 10px; */
+    z-index: 2;
+    margin-left: 4%;
+  }
+
+  .column-1 button i {
+    color: #555;
+    background-color: #88EDC6;
+    width: 150vw;
+    height: 150vh;
+  }
+
+  .parentcol-2 {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    /* Set height to 100% */
+    margin-left: 3%;
+    margin-top: 9%;
+    z-index: 2;
+  }
+
+  .parentcol-2 h3 {
+    margin-top: 5%;
+  }
+
+  .column-2-top {
+    width: 249px;
+    height: 47px;
+    background: #FFCF28;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 10px;
+    margin-top: 2%;
+    display: flex;
+    align-items: center;
+  }
+
+  .column-2-top p {
+    margin: 0;
+    margin-top: 1%;
+  }
+
+  .column-2-top .upside-down {
+    width: 3vw;
+    height: 3vh;
+    transform: rotateY(-180deg);
+    margin-left: auto;
+  }
+
+  .column-2 {
+    width: 15.5vw;
+    height: 47vh;
+    background: #bff0ba;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 10px;
+    margin-top: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+  }
+
+  /* Style the dropdown container */
+  #month-year-dropdown {
+    display: flex;
+    align-items: center;
+  }
+
+  /* Style the dropdowns */
+  #month-dropdown,
+  #year-dropdown {
+    padding: 8px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+
+  /* Style the dropdown arrow */
+  #month-dropdown,
+  #year-dropdown {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background: url('https://api.iconify.design/gridicons/dropdown.svg') no-repeat right center;
+    padding-right: 20px;
+    /* Adjust the padding based on the arrow icon size */
+  }
+
+  /* Style the dropdown options */
+  #month-dropdown option,
+  #year-dropdown option {
+    font-size: 14px;
+  }
+
+  /* Add hover effect to the options */
+  #month-dropdown option:hover,
+  #year-dropdown option:hover {
+    background-color: #f5f5f5;
+  }
+
+  /* Add focus style for better accessibility */
+  #month-dropdown:focus,
+  #year-dropdown:focus {
+    outline: none;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+  }
+
+  .yellowbtn {
+    width: 80px;
+    height: 32px;
+    background: #FFCF28;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 6px;
+    margin-top: 125%;
+    margin-right: 5%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    /* Add cursor pointer for better UX */
+  }
+
+  /* Adjust the icon size and margin if needed */
+  .yellowbtn i {
+    font-size: 16px;
+    margin-right: 5px;
+    /* Add margin between icon and text */
+  }
+
+  /* Center the text inside the yellowbtn */
+  .yellowbtn p {
+    margin: 0;
+    font-size: 14px;
+    /* Adjust the font size if needed */
+  }
+
+  .column-3 {
+    width: 68vw;
+    /* height: 150vh; */
+    background: #88EDC6;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 10px;
+    margin-left: 2%;
+    display: flex;
+    overflow-y: auto;
+    /* Add this to enable vertical scrolling */
+    max-height: 80vh;
+    /* Adjust the maximum height as needed */
+    flex-direction: column;
+    height: 100%;
+    /* background-image: url(); */
+    /* Set height to 100% */
+    /* justify-content: space-between; */
+    margin-top: 12%;
+    z-index: 2;
+  }
+
+  .current-date {
+    /* background-color: #ffc107; */
+    /* Use your desired background color for the current date */
+    color: #f72703;
+    /* Use a contrasting text color for better visibility */
+    border-radius: 50%;
+    /* Optional: Make the current date circle-shaped */
+  }
+
+  .day-card:hover {
+    background-color: #0b6164;
+    /* Change the background color on hover */
+    cursor: pointer;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+    /* Add a subtle box shadow on hover */
+    transition: background-color 0.3s, box-shadow 0.3s;
+    /* Add transition effect */
+  }
+
+  #schedule-display {
+    margin-top: 10px;
+  }
+
+  #add-btn {
+    cursor: pointer;
+  }
+
+  #edit-btn {
+    cursor: pointer;
+  }
+
+  #delete-btn {
+    cursor: pointer;
+  }
+
+  #cancel-btn {
+    cursor: pointer;
+  }
+
+  /* .weektitle {
+  display: flex;
+  justify-content: space-evenly;
+  font-weight: bold;
+  margin-top: 10px;
+} */
+
+  .calendar {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: space-evenly;
+    padding: 10px;
+  }
+
+  .week-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: space-evenly;
+  }
+
+  .day-card {
+    margin-top: 25%;
+    border: 1px solid #b1a4a4;
+    width: 5vw;
+    background-color: #f1f1f1;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin: 10px;
+    padding: 10px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+    flex-basis: calc(14.28% - 10px);
+    /* Adjust the flex basis for responsiveness */
+    margin: 5px;
+  }
+
+  .day-card.has-data {
+    background-color: #05e605;
+    /* Change this to your desired color */
+  }
+
+  .day-number {
+    font-size: 24px;
+    margin-bottom: 8px;
+    font-weight: bold;
+  }
+
+  .day-name {
+    font-size: 12px;
+    color: #555;
+    /* Adjust the color based on your design */
+  }
+
+
+  /* Add a responsive design for medium screens */
+  @media only screen and (max-width: 1200px) {
+    .container {
+      flex-direction: column;
+    }
+
+    .column-1,
+    .parentcol-2,
+    .column-3 {
+      width: 100%;
+      /* Make them full width */
+    }
+  }
+
+  /* Add a responsive design for small screens */
+  @media only screen and (max-width: 768px) {
+    .container {
+      flex-direction: column;
+    }
+
+    .column-1,
+    .parentcol-2,
+    .column-3 {
+      width: 100%;
+      /* Make them full width */
+    }
+
+    .column-2-top {
+      width: 90vw;
+    }
+
+    .column-2 {
+      width: 90vw;
+      z-index: 1;
+    }
+
+    .column-3 {
+      width: 90vw;
+      margin-right: 50%;
+    }
+
+    .day-card {
+      width: 17vw;
+    }
+
+    .yellowbtn {
+      margin-top: 78%;
+      padding: 50 auto;
+      z-index: 2;
+    }
+  }
+
+  /* Add a responsive design for extra small screens */
+  @media only screen and (max-width: 480px) {
+    .container {
+      flex-direction: column;
+    }
+
+    .column-1,
+    .parentcol-2,
+    .column-3 {
+      width: 100%;
+      /* Make them full width */
+    }
+  }
